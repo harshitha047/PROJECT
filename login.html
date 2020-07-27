@@ -28,7 +28,7 @@
                 }
                 else
                 {
-                  var api_url ="http://localhost:4002/signin";
+                  var api_url ="http://localhost:3000/signin";
                     var data = {
                         username : $('#username').val(),
                         password : $('#password').val(),
@@ -41,7 +41,7 @@
                             contentType:"application/json; charset=utf-8",
                         success:function(d)
                         {
-                            if(d.code==400)
+                            if(d.code==200)
                             {
                                 window.location.href='booking.html';
                                 

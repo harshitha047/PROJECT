@@ -10,6 +10,6 @@ address varchar(100) not null,
 primary key (id)
 );
 select * from registerform;
-ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'Shiva@123';
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'Gitam@123';
 flush privileges;
 
