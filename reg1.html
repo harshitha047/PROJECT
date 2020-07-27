@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login Page</title>
+   
+	<!--Bootsrap 4 CDN-->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    
+    <!--Fontawesome CDN-->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+	<!--Custom styles-->
+    <link rel="stylesheet" type="text/css" href="reg.css">
+    <script src ="../My Project/bootstrap-4.5.0-dist/js/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#btnsubmit').click(function(){
+            var v1 = $("#id1").val();
+            var v2 = $("#id2").val();
+            var v3 = $("#id3").val();
+            var v4 = $("#id4").val();
+            var v5 = $("#id5").val();
+            var c =0;
+
+            if(/^[a-zA-Z]{4,8}$/.test(v1))
+            {
+                c=c+1;
+                    $("#id1").addClass("true");
+            }
+            else{
+                    $("#id1").addClass("false");
+            }
+
+          
+            if(/^[6-9][0-9]{9}$|[0][6-9][0-9]{9}$|[+][9][1][6-9][0-9]{9}$/.test(v2))
+            {
+                c=c+1;
+                    $("#id2").addClass("true");
+                    
+            }
+            else{
+                    $("#id2").addClass("false");
+            }
+            if(/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$]).{5,12}$/.test(v3))
+                { 
+                    c=c+1;   
+                    $("#id3").addClass("true");
+                }
+                else{
+                    $("#id3").addClass("false");
+                }
+            
+            if(/^[a-zA-Z._0-9-]{6,12}[@][a-z]{3,15}[.][a-z]{2,6}$/.test(v4))
+            {
+                c=c+1;
+                $("#id4").addClass("true");
+            }
+            else{
+                $("#id4").addClass("false");
+            }
+            if(v5 == '')
+            {
+                
+                $("#id5").addClass("false");
+            }            else{
+                c=c+1;
+                $("#id5").addClass("true");
+            }
+            if(c == 5){
+                window.alert('Successfully Registered');
+                var api_url ="http://localhost:3000/registerform";
+                    var data = {
+                        username : $('#id1').val(),
+                        mobile : $('#id2').val(),
+                        password : $('#id3').val(),
+                        email : $('#id4').val(),
+                        address : $('#id5').val(),
+                    }
+                    $.ajax({
+                        url:api_url,
+                        type:"POST",
+                        dataType:"json",
+                        data:JSON.stringify(data),
+                        contentType:"application/json; charset=utf-8",
+
+                        success:function(d){
+                            alert('values are submitted,now you will directed to login page');
+                            setTimeout(function(){
+                                window.location.href="login.html";
+                            },4000);
+                            
+                        },
+                        error:function(efg) {
+                            alert('wrong with insert ');
+                        }
+                    });
+            }
+            else{
+                window.alert('Registration Failed');
+                window.alert(c);
+            }
+            });
+        });
+    </script>
+     <style>
+        .false{
+            border: 2px solid red;
+        }
+        .true{
+            border: 2px solid lightgreen;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top">
+        <div class="container">
+            <div class="navbar-collapse collapse" id="navbar10">
+                <ul class="navbar-nav nav-fill w-100">
+                    <li class="nav-item ">
+                        <a class="nav-link font-weight-bold" href="home.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link font-weight-bold" href="rooms.html">Rooms</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link font-weight-bold" href="gal.html">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link font-weight-bold" href="login.html">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link font-weight-bold" href="home.html#about">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link font-weight-bold" href="home.html#contact">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav> 
+   
+<div class="container py-5">
+	<div class="d-flex justify-content-center  h-100">
+		<div class="card">
+			<div class="card-header bg-warning">
+				<h3>Sign Up</h3>
+				<div class="d-flex justify-content-end social_icon">
+					<span><i class="fab fa-facebook-square"></i></span>
+					<span><i class="fab fa-google-plus-square"></i></span>
+					<span><i class="fab fa-twitter-square"></i></span>
+				</div>
+            </div>
+            <div class="card text-white bg-info mb-3">
+			<div class="card-body">
+				<form>
+					<div class="input-group form-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text"><i class="fas fa-user"></i></span>
+						</div>
+						<input type="text" id="id1" class="form-control" placeholder="Enter Username">	
+                    </div>
+                    <div class="input-group form-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text"><i class="fa fa-mobile"></i></span>
+						</div>
+						<input type="text" id="id2" class="form-control" placeholder="Enter Mobile Number">	
+					</div>
+					<div class="input-group form-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text"><i class="fas fa-key"></i></span>
+						</div>
+						<input type="password" id="id3" class="form-control" placeholder="Enter Password">
+                    </div>
+            
+                    <div class="input-group form-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text"><i class="fa fa-envelope"></i></span>
+						</div>
+						<input type="text" id="id4" class="form-control" placeholder="Enter Email">
+                    </div>
+                    <div class="input-group form-group">
+						<div class="input-group-prepend">
+                            <span class="input-group-text" ><i class="fa fa-life-ring"></i></span>
+						</div>
+						<textarea rows="4" cols="50" id="id5" class="form-control" placeholder="Enter Address"></textarea>
+                    </div>
+					<div class="form-group">
+                        <button type="button" class="btn btn-primary" id="btnsubmit">register</button>
+					</div>
+				</form>
+			</div>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,10 @@
+ul{
+    margin-right: 100px;
+}
+.nav-item:hover{
+    background-color: rgb(240, 115, 77);
+}
+body{
+    background:url("r1.jpg") center/cover fixed no-repeat;
+    font-family: cursive;
+}

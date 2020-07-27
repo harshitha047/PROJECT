@@ -1,0 +1,220 @@
+<html>
+    <head>
+        <title>
+            Booking Page
+        </title>
+        <script src="../My Project/bootstrap-4.5.0-dist/js/jquery.min.js"></script>
+        <link rel="stylesheet" href="../My Project/bootstrap-4.5.0-dist/css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="../My Project/font-awesome-4.7.0/css/font-awesome.min.css"/>
+        <link rel="stylesheet" href="book.css"/>
+
+        <script>
+              $(document).ready(function(){
+                  $("#btnsubmit").click(function(){
+                  var v1 = $("#id1").val();
+                  var v2 = $("#id2").val();
+                  var v3 = $("#id3").val();
+                  var v4 = $("#id4").val();
+                  var v5 = $("#id5").val();
+                  var v6 = $("#id6").val();
+                  var v7 = $("#id7").val();
+                  var v8 = $("#id8").val();
+                  var v9 = $("#id9").val();
+                  var v10 = $("#id10").val();
+                  var v11 = $("#rooms").val();
+                  var c = 0;
+  
+                  if(/^[a-zA-Z]{2,10}$/.test(v1))
+                  {
+                      
+                      $("#id1").addClass("true");
+                      c=c+1;
+                  }
+                  else{
+                      $("#id1").addClass("false");
+                      
+                  }
+                  if(/^[a-zA-Z]{2,10}$/.test(v2))
+                  {
+                      
+                      $("#id2").addClass("true");
+                      c=c+1;
+                  }
+                  else{
+                      $("#id2").addClass("false");
+                    
+                  }
+  
+                  
+                  if(/^[a-zA-Z._0-9-]{4,12}[@][a-z]{3,15}[.][a-z]{2,6}$/.test(v3))
+                  {
+                      c=c+1;
+                      $("#id3").addClass("true");
+                  }
+                  else{
+                      $("#id3").addClass("false");
+                  }
+                  
+                  if(/^[6-9][0-9]{9}$|[0][6-9][0-9]{9}$|[+][9][1][6-9][0-9]{9}$/.test(v4))
+                  {
+                      c=c+1;
+                          $("#id4").addClass("true");
+                          
+                  }
+                  else{
+                          $("#id4").addClass("false");
+                  }
+                  
+                  if(v5 == '')
+                  {
+                      $("#id5").addClass("false");
+                      
+                  }
+                  else{
+                      $("#id5").addClass("true");
+                      c=c+1;
+                  }
+                  if(/^[a-zA-Z]{2,10}$/.test(v6))
+                  {
+                      c=c+1;
+                      $("#id6").addClass("true");
+                  }
+                  else{
+                      
+                      $("#id6").addClass("false");
+                  }
+                  if(/^[a-zA-Z]{2,10}$/.test(v7))
+                  {
+                      $("#id7").addClass("true");    
+                      c=c+1;
+                  }
+                  else{
+                      $("#id7").addClass("false");
+                      
+                  }
+                  if(/^[0-9]{4}-[0-9]{4}-[0-9]{4}$/.test(v8))
+                  {           
+                    $("#id8").addClass("true");
+                    c=c+1;
+                  }
+                  else{
+                      $("#id8").addClass("false");
+                    }
+                    if(/^[0][1-9]|[1][0-2]-[0-9]{2}$/.test(v9))
+                    {
+                      $("#id9").addClass("true");
+                      c=c+1;
+                    }
+                      else{
+                        $("#id9").addClass("false");
+                      }
+                  
+  
+                  if(/^[0-9]{3}$/.test(v10))
+                  {
+                    $("#id10").addClass("true");
+                    c=c+1;
+                  }
+                  else{
+                
+                    $("#id10").addClass("false")
+                  }
+
+                  if(v11 == "None"){
+                    $("#rooms").addClass("false");
+                  }
+                  else{
+                    $("#rooms").addClass("true");
+                    c=c+1;
+                  }
+                 
+                  if(c == 11){
+                      window.alert('Successfully Booked');
+                    }
+                  else{
+                      window.alert('Booking Not Completed');
+                      window.alert(c);
+                  }
+                  });
+              });
+              </script>
+    </head>
+    <body>
+       <nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top">
+            <div class="container">
+                <div class="navbar-collapse collapse" id="navbar10">
+                    <ul class="navbar-nav nav-fill">
+                        <li class="nav-item">
+                          <a class="nav-link font-weight-bold" href="home.html"><i class="fa fa-dot-circle-o" aria-hidden="true"></i>   Logout</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav> <br><br><br>
+    <div class="row">
+        <div class="col-50 ">
+          <div class="container a1">
+      <div class="row">
+        <div class="col-50">
+          <h3>Guest information</h3><br>
+           
+          <span ><i class="fa fa-user"></i> First Name</span>
+          <input type="text" id="id1" name="firstname" placeholder="name"/>
+
+          <label for="id2"><i class="fa fa-user"></i> Last Name</label>
+          <input type="text" id="id2" name="last name" placeholder="surname"/>
+
+          <label for="id3"><i class="fa fa-envelope"></i> Email</label>
+          <input type="text" id="id3" name="email" placeholder="We care about your privacy "/>
+
+          <label for="id4"><i class="fa fa-mobile"></i>Mobile</label>
+          <input type="text" id="id4" name="mobile" placeholder="mobile number"/>
+
+          <label for="id11"><i class="fa fa-bed" ></i>Choose a Room</label>
+          <select name="rooms" id="rooms" >
+            <option >None</option>
+            <option value="Luxury Suite">Luxury Suite</option>
+            <option value="Delux Suite">Delux Suite</option>
+            <option value="Premier Suite">Premier Suite</option>
+            <option value="Luxury Room">Junior Suite</option>
+          </select>
+          <br><br>
+
+          <label for="id5"><i class="fa fa-address-card-o"></i> Address</label>
+          <input type="text" id="id5" name="address" placeholder="542 W. 15th Street"/>
+
+
+          <label for="id6"><i class="fa fa-institution"></i> City</label>
+          <input type="text" id="id6" name="city" placeholder="the place where you live"/>
+
+          <label for="id7"><i class="fa fa-country"></i>Country</label>
+          <input type="text" id="id7" name="country" placeholder="country"/>
+        </div>
+
+        <div class="col-75">
+          <h3>Payment</h3>
+          
+          <label for="id8">Credit Card Number</label>
+          <input type="text" id="id8" name="cardnumber" placeholder="1111-2222-3333"/>
+          <label for="id9">Expriy</label>
+          <input type="text" id="id9" name="Expiry" placeholder="MM/YY"/>
+          <label for="id10">CVV</label>
+          <input type="text" id="id10" name="CVV" placeholder="3 digits"/>
+      
+        <label for="fname">Accepted Cards</label>
+        <div class="icon-container">
+          <i class="fa fa-cc-visa" style="color:navy;"></i>
+          <i class="fa fa-cc-amex" style="color:blue;"></i>
+          <i class="fa fa-cc-mastercard" style="color:red;"></i>
+          <i class="fa fa-cc-discover" style="color:orange;"></i>
+        </div>
+      </div>
+      <button type="button" id="btnsubmit" class="btn">Complete Booking</button>
+    </div>
+    </div>
+      
+    </form>
+  </div>
+</div>
+</body>
+</html>

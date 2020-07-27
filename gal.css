@@ -1,0 +1,25 @@
+ul{
+    margin-right: 100px;
+}
+.nav-item:hover{
+    background-color: rgb(240, 115, 77);
+}
+body{
+    font-family: cursive;
+    background-color: mistyrose;
+}
+.row{
+    margin-bottom: 40px;
+}
+.container img
+{
+width: 350px;
+padding: 20px;
+transition: 1s;
+border-radius: 20px;
+}
+.container img:hover
+{
+    filter: grayscale(0);
+    transform: scale(1.4);
+}

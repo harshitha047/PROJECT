@@ -1,0 +1,202 @@
+<html>
+    <head>
+        <title>
+            Home Page
+        </title>
+        <link rel="StyleSheet" href="../My Project/bootstrap-4.5.0-dist/css/bootstrap.min.css"/>
+        <script type="text/javascript" src="../My Project/bootstrap-4.5.0-dist/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="../My Project/bootstrap-4.5.0-dist/js/jquery.min.js"></script>
+        <link rel="stylesheet" href="../My Project/font-awesome-4.7.0/css/font-awesome.min.css"/>
+        <link rel="stylesheet" href="home.css"/>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                  $('#btn1').click(function(){
+                  var v1 = $("#id1").val();
+                  var v2 = $("#id2").val();
+                  var v3 = $("#id3").val();
+                  var c=0;
+                  if(/^[0-9][0-9]-[0-9][0-9]-[0-9]{4}$/.test(v1)){
+                    $("#id1").addClass("true");
+                    c=c+1;
+                  }
+                  else{
+                    $("#id1").addClass("false");
+                  }
+                  if(/^[0-9][0-9]-[0-9][0-9]-[0-9]{4}$/.test(v2)){
+                    $("#id2").addClass("true");
+                    c=c+1;
+                  }
+                  else{
+                    $("#id2").addClass("false");
+                  }
+                  if(/^[0-8]$/.test(v3)){
+                    $("#id3").addClass("true");
+                    c=c+1;
+                  }
+                  else{
+                    $("#id3").addClass("false");
+                  }
+                  if(c==3){
+                      window.open("rooms.html");
+                  }
+                  else{
+                      window.alert('Fill All The Fields');
+                  }
+                });
+              });
+        </script>
+        <style>
+            .false{
+               border: 2px solid red;
+            }
+            .true{
+                border: 2px solid lightgreen;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="img"></div>
+        <div class="centered">HOTEL MOONSHINE</div>
+        <nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top">
+            <div class="container">
+                <div class="navbar-collapse collapse" id="navbar10">
+                    <ul class="navbar-nav nav-fill w-100">
+                        <li class="nav-item ">
+                            <a class="nav-link font-weight-bold" href="home.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link font-weight-bold" href="rooms.html">Rooms</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link font-weight-bold" href="gal.html">Gallery</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link font-weight-bold" href="login.html">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link font-weight-bold" href="home.html#about">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link font-weight-bold" href="home.html#contact">Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav> <br>
+        <section id="c1">
+            Check-In: <input type="text"  id="id1" placeholder="DD-MM-YYYY" style="border-radius: 5px; padding: 5px;"/>
+            Check-Out: <input type="text" id="id2" placeholder="DD-MM-YYYY" style="border-radius: 5px; padding: 5px;"/> 
+            Number Of Guests: <input type="text" id="id3" placeholder="No Of Guests" style="border-radius: 5px; padding: 5px;"/>
+            <button class="btn btn-primary" id="btn1">Search</button>
+        </section><br>
+        <section >
+            <div class="container p1" >
+                <div class="row">
+                    <div class="col-md-8" id="img1">
+                        <img src="p2.jpg" width="750px" height="300px" />
+                    </div>
+                    <div class="col-md-4 justify-content-center" id="txt">
+                        <p>The Hotel Moonshine is built around
+                            a unique concept that provides facilities to meet the
+                            key needs of today’s business traveler, at surprisingly
+                            affordable rates. We have created a new category in the
+                            domestic hospitality landscape, while giving a major fillip
+                            to Indian tourism and other ancillary industries.
+                            The primary objective behind the launch of these hotel 
+                            service is to provide a superior product offering and
+                            consistent experience to business travelers, beyond the
+                            present offerings in the industry.</p>
+                    </div>
+                </div>
+            </div>  <hr>
+        </section>
+        <br>
+        <section>
+            <div class="container p1" >
+                <div class="row" >
+                    <div class="col-md-4 justify-content-center" id="txt">
+                        <p>Hotel Moonshine offers ultimate comfort and luxury.
+                            This hotel is a beautiful combination of
+                            traditional grandeur and modern facilities. The 255
+                            exclusive guest rooms are furnished with a range of modern
+                            amenities such as television and internet access. International
+                            direct-dial phone and safe are also available in any of these rooms.
+                            Wake-up call facility is also available in these rooms. </p>
+                    </div>
+                    <div class="col-md-8" id="img2" >
+                        <img src="p3.jpg" width="750px" height="300px"/>
+                    </div>
+                </div>
+            </div>  <hr>
+        </section>
+        <br>
+        <section>
+            <div class="container p1">
+                <div class="row">
+                    <div class="col-md-8" id="img1">
+                        <img src="p4.jpg" width="750px" height="300px"/>
+                    </div>
+                    <div class="col-md-4" justify-content-center id="txt">
+                        <p>Hotel moonshine,serves food to
+                            the guests as per their choices and needs.
+                            we are serving a wide variety of cuisines
+                            to meet the taste buds of all types of
+                            guests and ensuring that they enjoy their food.
+                            
+                            </p>
+                    </div>
+                </div>
+            </div>  <hr>
+        </section>
+        <br>
+        <div id="about">
+        <section >
+            <br><br><br>
+            <div class="container" >
+                <div class="row" >
+                    <div class="col-md-6">
+                        <h3>About this hotel</h3>
+                        <p>Hotel Moonshine is one of the world’s most reputable upscale hotel management companies.
+                            Hotel Moonshine is a modern, upscale hospitality company that is passionate 
+                            about ‘making moments’, recognising that small gestures make a big difference to our
+                            guests, our owners and our people. We do ordinary things in an extraordinary way – a philosophy
+                            that has defined our brand’s success from the very start. </p>
+                        <p><b>Check-in time:</b>12:00PM</p>
+                        <p><b>Check-out time:</b>11:00AM</p>
+                    </div>
+                    <div class="col-md-2"></div>
+                    <div class="col-md-4">
+                        <h3>Popular Amenities</h3><br>
+                        <span><i class="fa fa-car" id="m1" > Parking</i></span><br>
+                        <span><i class="fa fa-cutlery" id="m1" > Breakfast</i></span><br>
+                        <span><i class="fa fa-wifi" id="m1" > Wifi</i></span><br>
+                        <span><i class="fa fa-snowflake-o" > Air Conditioning </i></span><br>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+        <br>
+        <section id="contact">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h3>Contact Us</h3>
+                        <p>Get answers to your questions,however you like to get in touch and wherever you are in the world. 
+                            Choose from email, phone  and we’ll help you direct your inquiries to the right place, quickly and easily.
+                         </p>
+                        <b>Email:</b>moonshinehotel@gmail.com<br>
+                        <b>Phone:</b>9922114477
+                        <p><b>Address:</b>7-4-209,Road No-4,Banjara Hills,Hyderabad,Telangana,500034.</p>
+                        <section id="icons">
+                        <i class="fa fa-facebook-square" aria-hidden="true"></i>
+                        <i class="fa fa-instagram" aria-hidden="true"></i>
+                        <i class="fa fa-twitter-square" aria-hidden="true"></i>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <br>
+    </body>
+</html>

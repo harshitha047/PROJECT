@@ -1,0 +1,9 @@
+ul{
+    margin-right: 100px;
+}
+.nav-item:hover{
+    background-color: rgb(206, 133, 110);
+}
+body{
+    background:url("pic.jpg") center/cover fixed no-repeat;
+}
